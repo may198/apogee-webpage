@@ -1,0 +1,598 @@
+/* ------------------------------- */
+/* Custom properties               */
+/* ------------------------------- */
+
+:root{
+
+    /* color */
+    --clr-black: 0 0% 0%;
+    --clr-black1: 0 0% 7%;        /*11111*/
+    --clr-black2: 0 0% 17%;       /*22222*/
+    --clr-black3: 0 0% 20%;       /*33333*/
+    --clr-red: 0 100% 50%;
+    --clr-white: 0 0 100%;
+    --clr-brand: 77 48% 50%;
+    --clr-blue: 213 100% 35%; 
+    --clr-gray: 0 0% 87%;         /* #DDDDDD */
+    --clr-lightgray: 0 0% 93%;    /* #eeeee */
+    --clr-light: 0 0% 98%;        /* #f9f9f9 for body bg */
+    --clr-707070:0 0% 44%;          /* #707070 */
+    
+    /* font-sizes */
+    --fs-900: 2.25rem;          /*36px*/
+    --fs-800: 1.5rem;           /*24px*/
+    --fs-700: 1.25rem;          /*20px*/
+    --fs-600: 1.125rem;         /*18px*/
+    --fs-500: 1.0625rem;        /*17px*/
+    --fs-400: 1rem;             /*16px*/
+    --fs-300: 0.9375rem;        /*15px*/
+    --fs-200: 0.875rem;         /*14px*/
+    --fs-100: 0.8125rem;        /*13px*/
+
+    /* font families */
+    --ff-rubik: 'Rubik', sans-serif;
+
+}
+
+/* ------------------------------- */
+/* Reset                           */
+/* ------------------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    font-weight: 400 ;
+}
+
+
+
+/* set up the body */
+body {
+    font-family: var(--ff-rubik);
+    font-size: var(--fs-600);     /*regular 18px/1.125rem*/
+    color: hsl(var(--clr-black));
+    background-color: hsl(var(--clr-white));
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ------------------------------- */
+/* Utility Classes                 */
+/* ------------------------------- */
+
+
+
+/* General */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1.2rem);
+}
+
+.container {
+    padding-inline: 2em;
+    margin-inline: auto;
+    margin-block: 2rem;
+    max-width: 75rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+
+
+/* Colors */
+
+.bg-black {background-color: hsl(var(--clr-black));}
+.bg-light {background-color: hsl(var(--clr-light));}
+.bg-gray { background-color: hsl(var(--clr-gray));}
+.bg-lightgray {background-color: hsl(var(--clr-lightgray));}
+.bg-red {background-color: hsl(var(--clr-red));}
+.bg-white {background-color: hsl(var(--clr-white));}
+
+.text-black {color: hsl(var(--clr-black));}
+.text-707070 { color: hsl(var(--clr-707070 ));}   /*Nav text*/
+.text-light {color: hsl(var(--clr-light));}
+.text-gray { color: hsl(var(--clr-gray));}
+.text-lightgray {color: hsl(var(--clr-lightgray));}
+.text-red { color: hsl(var(--clr-red));}
+.text-white { color: hsl(var(--clr-white));}
+.text-black1 { color: hsl(var(--clr-black1));}
+.text-black2 { color: hsl(var(--clr-black2));}
+.text-black3 { color: hsl(var(--clr-black3));}
+.text-brand { color: hsl(var(--clr-brand));}
+
+
+/* Typography */
+
+.ff-rubik { font-family: var(--ff-rubik);}
+
+.uppercase { text-transform: uppercase;}
+
+.bold { font-weight: 700;}
+.medium { font-weight: 500;}
+
+.fs-900 { font-size: var(--fs-900);}
+.fs-800 { font-size: var(--fs-800);}
+.fs-700 { font-size: var(--fs-700);}
+.fs-600 { font-size: var(--fs-600);}
+.fs-500 { font-size: var(--fs-500);}
+.fs-400 { font-size: var(--fs-400);}
+.fs-300 { font-size: var(--fs-300);}
+.fs-200 { font-size: var(--fs-200);}
+.fs-100 { font-size: var(--fs-100);}
+
+.fs-900{ line-height: 44px;}
+.fs-800{ line-height: 44px;}
+.fs-700{ line-height: 44px;}
+.fs-600{ line-height: 36px;}
+.fs-500{ line-height: 24px;}
+.fs-400{ line-height: 24px;}
+.fs-300{ line-height: 24px;}
+.fs-200{ line-height: 28px;}
+.fs-100{ line-height: 20px;}
+
+.lh-24{ line-height: 24px; }
+
+
+/* Components */
+
+
+/*----- Navigation ------- */
+
+.primary-navigation {
+    justify-content: center;
+    --gap: 1.875rem; 
+    align-items: center;  
+    list-style: none;
+    padding-inline: 1.25rem;
+    margin: 0;
+    background: hsl(var(--clr-black));  
+    /* border: 1px solid yellow; */
+    margin-block: 2rem;
+    
+}
+
+.primary-navigation a {
+    text-decoration: none;
+}
+.primary-navigation a:hover{
+    color: hsl(var(--clr-red));
+}
+/* .primary-navigation > *:where(:last-child) {
+    border: 1px solid yellow;
+} */
+
+.category-filter{
+    --gap: 0;
+    align-items: center;
+    background-color: hsl(var(--clr-black2));
+    padding-inline: 1.25rem;
+}
+
+.category-btn{
+    background: transparent;
+    padding-left: 0.65rem;
+    padding-block: 1.25rem;
+    padding-right: 5rem;
+    /* border: 1px solid yellow; */
+}
+
+.filter{
+    background: transparent;
+    background-image: url(./assets/icons/Menu.svg);
+    background-repeat: no-repeat;
+    width: 1.2rem;
+    aspect-ratio: 1;
+    /* border: 1px solid gold; */
+}
+
+.dropdown-icon{
+    background: transparent;
+    background-image: url(./assets/icons/arrow-down.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 1rem;
+    aspect-ratio: 1;
+    /* border: 1px solid gold; */
+}
+
+.language{
+    align-self: flex-end;
+    justify-content: center;
+    --gap: 0.2rem;
+    padding: 0.4rem;
+    margin-left: 9rem;
+    border: 1px solid hsl(var(--clr-lightgray) /.5);
+}
+
+.flag{
+    background: transparent;
+    background-image: url(./assets/icons/uk-flag\ \(1\).svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    aspect-ratio: 2 0.5;
+    /* border: 1px solid gold; */
+}
+.language .dropdown-icon{
+    opacity: 30%;
+    width: 3rem;
+    margin-left: 0.4rem;
+    /* border: 1px solid gold; */
+}
+.category, .language:hover{
+    cursor: pointer;
+}
+
+
+
+
+/* ------Interactive Elements -------- */
+
+.interactive-elements{
+    flex-direction: column;
+    --gap: 2rem;
+}
+
+
+
+
+/*----- Search input --------*/
+.search{
+    align-items: center;
+    width: 100%;
+    /* border: 1px solid gold; */
+    position: relative;
+}
+.form-control{
+    width: 100%;
+    height: 100%;
+    padding-block: 1rem;
+    border-top-left-radius: 1.6rem;
+    border-top-right-radius: 1.6rem;
+    border-bottom-left-radius: 1.6rem;
+    border-bottom-right-radius: 1.6rem;
+    /* border: 1px solid gold; */
+}
+
+.search-icon{
+    border: none;
+    background: red;
+    background-image: url(./assets/icons/search.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    /* margin-block: .1rem; */
+    width: 4.5rem;
+    height: 3rem;
+    border-top-left-radius: 1.6rem;
+    border-top-right-radius: 1.6rem;
+    border-bottom-left-radius: 1.6rem;
+    border-bottom-right-radius: 1.6rem;
+    position: absolute;
+    right: .15rem;
+    /* border: 1px solid black; */
+ }
+
+ .search-form{
+     max-width: 30rem;
+ }
+
+
+ /* Primary Button */
+
+ /* .buttons{
+     --gap: 5rem;
+ }
+  */
+
+
+ .primary-btn{
+     position: relative;
+     max-width: 14rem;
+     text-align: center;
+     border: 2px solid hsl(var(--clr-red));
+     /* color: hsl(var(--clr-gray)); */
+     padding-block: 1.2rem;
+     margin-bottom: 2rem; /*just for now*/
+     overflow:hidden;
+     z-index: 1;
+     cursor: pointer;
+     transition: 0.08s ease-in;
+     -o-transition: 0.08s ease-in;
+    -ms-transition: 0.08s ease-in;
+    -moz-transition: 0.08s ease-in;
+    -webkit-transition: 0.08s ease-in;
+ }
+
+ .primary-btn {
+    color: hsl(var(--clr-red));
+  }
+  
+ .primary-btn:hover {
+    color: hsl(var(--clr-light));
+  }
+ .primary-btn:before {
+    content: "";
+    position: absolute;
+    background: hsl(var(--clr-red));
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    transition: top 0.09s ease-in;
+  }
+  
+  .primary-btn:hover:before {
+    top: 0;
+  }
+
+ .explore{
+    position: relative;
+    max-width: 10rem;
+    padding-block: 0.4rem;
+    /* padding-inline: 0rem; */
+ }
+
+
+ /* Ad tab */
+
+ .tab-indicators{
+     --gap: .5rem ;
+ }
+ .tab-indicators > button{
+     width: 1.5rem;
+     border: none;
+     background: transparent;
+     border-bottom: 2px solid hsl(var(--clr-black) /.5);
+ }
+
+ .tab-indicators > button.active,
+ .tab-indicators > button[aria-selected="true"]{
+    border-bottom: 2px solid hsl(var(--clr-red) / 1);
+ }
+
+ /* Categories */
+
+ .categories{
+     --gap: 1.5rem;
+     max-width: 10.6rem ;
+     background: transparent;
+     flex-direction: column;
+     text-align: center;
+     /* border: 1px solid black; */
+     
+ }
+ .categories .image{
+     border: 1px solid hsl(var(--clr-gray));
+     border-radius: 50%;
+     background-image: url(./assets/Categories/engine.png);
+     aspect-ratio: 1;
+ }
+
+ .categories .image:hover,
+ .categories .image:focus{
+    border: 1px solid hsl(var(--clr-red));
+    transition: 200ms ease-in-out;
+    -moz-box-shadow: 0px 2px 5px 3px hsl(var(--clr-gray));
+    -webkit-box-shadow: 0px 2px 5px 3px hsl(var(--clr-gray));
+    box-shadow: 0px 2px 5px 3px hsl(var(--clr-gray));
+ }
+
+
+/* Banners */
+
+.banner{
+    align-items: center;
+    justify-content: space-between;
+    --gap: .5rem ;
+    flex-direction: row;
+    padding-inline: 1rem;
+    /* display: inline-block; */
+    /* border: 1px solid gold; */
+    max-width: 27rem;
+    background-color: hsl(var(--clr-lightgray));
+    background-image: url(./assets/Services/service1.png);
+    background-repeat: no-repeat;
+    
+    /* padding-block: 1.25rem; */
+}
+.home-service{
+    width: 13rem;
+    aspect-ratio: 1;
+}
+.des{
+    display: inline-block;
+    align-self: flex-end;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid gold;
+    /* border: 1px solid black; */
+}
+.des p{
+    max-width: 11rem;
+}
+.des .explore{
+    
+    /* display: inline-block; */
+}
+
+
+
+
+ /* ------------- Footer -------------- */
+.footer{
+    /* border: 1px solid gold; */
+    padding-top: 2rem;
+    /* background-image: url(./assets/Services/service1@2x.png);
+    background-position: initial;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background-color: hsl(var(--clr-black));
+}
+
+.footer-column{
+     flex-grow: 1;
+     flex-direction: column;
+     /* background-color: pink; */
+     width: calc(100%/10);
+     height: 20rem;
+     /* border: 1px solid gold; */
+     /* justify-content: flex-start; */
+ }
+.footer-column a{
+    text-decoration: none;
+}
+
+.footer-column a:hover,
+.footer-column a:focus{
+    color: hsl(var(--clr-red));
+}
+
+.logo-black{
+    margin-bottom: 1rem;
+    max-width: 8.125rem;
+}
+.contact-info{
+    --gap: 1rem;
+    flex-grow: 4;
+}
+
+ .address,.ph,.mail{
+     align-items: flex-start;
+     /* border: 1px solid red; */
+ }
+
+.ph-icon,.mail-icon{
+    width: 1.2rem;
+    aspect-ratio: 1;
+    /* border: 1px solid black; */
+    margin-left: .2rem;
+}
+
+.add-icon{
+    width: 2.3rem;
+    aspect-ratio: 1 6;
+    /* border: 1px solid black; */
+}
+.social div{
+    align-content: center;
+    width: 2rem;
+    aspect-ratio: 1;
+    background: hsl(var(--clr-black3));
+    border-radius: 50%;
+}
+
+.social{
+    margin-top: .75rem;
+}
+.social img{
+   margin: .5rem auto;
+   /* border: 1px solid gold; */
+}
+.information, .customer-service, .payment{
+    padding-top: 2rem;
+}
+.footer-column ul{
+    margin-top: 1.3rem;
+    /* border: 1px solid gold; */
+    padding-left: 1rem;    /*may be fixed again in responsive*/
+    --flow-space: 0.5rem;
+}
+
+.footer-column li{
+    color: hsl(var(--clr-707070));
+}
+ .payment{
+     flex-grow: 2;
+     right: 0;
+ }
+ .payment-type{
+    margin-top: 1.3rem;
+     --gap: .625rem;
+     flex-wrap: wrap;
+     max-width: 17rem;
+ }
+ .payment-type img{
+     width: 3rem;
+     height: 1.7rem;
+ }
+ .copyright{
+     background-color: hsl(var(--clr-black1));
+     padding-block: 1.75rem;
+     /* border: 1px solid gold; */
+     text-align: center;
+ }
