@@ -17,36 +17,59 @@
     <body class="bg-white text-black">
 
         <!-- Nav -->
-        <div>
-            <button class="mobile-nav-toggle bi bi-list" aria-controls="primary-navigation">
-            <span class="sr-only" aria-expanded="false">Menu</span></button>
-            <nav>
-                <ul class="primary-navigation flex">
-                    <li>
-                        <div class="category-filter flex">
-                            <div class="filter"></div>
-                            <p class="category-btn fs-400 text-white uppercase">All CATEGORY</p>
-                            <div class="dropdown-icon"></div>
-                        </div>
-                    </li>
-                    <li><a class="fs-400 text-gray" href="#">Service Ticket</a></li>
-                    <li><a class="fs-400 text-gray" href="#">Home Service</a></li>
-                    <li><a class="fs-400 text-gray" href="#">Express Service</a></li>
-                    <li><a class="fs-400 text-gray" href="#">About Us</a></li>
-                    <li><a class="fs-400 text-gray" href="#">Contact Us</a></li>
-                    <li>
-                        <div class="language flex">
-                            <div class="flag"></div>
-                            <p class="fs-400 text-gray">English</p>
-                            <div class="dropdown-icon"></div>
-                        </div>
-                    </li>
-                </ul>   
-            </nav>
-        </div>
+        <section class="navbar-large" id="navbar">
+            <!-- Nav -->
+            <div id="navigation">
+                <div>
+                    <button class="mobile-nav-toggle bi bi-list" aria-controls="primary-navigation">
+                    <span class="sr-only" aria-expanded="false">Menu</span></button>
+                    
+                    <nav class="hero-nav">
+                        <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+                            <li>
+                                <div class="category-filter flex">
+                                    <div class="filter"></div>
+                                    <p class="category-btn fs-400 text-white uppercase">All CATEGORY</p>
+                                    <div class="dropdown-icon"></div>
+                                </div>
+                            </li>
+                            <li><a class="fs-400 text-gray" href="#">Service Ticket</a></li>
+                            <li><a class="fs-400 text-gray" href="#">Home Service</a></li>
+                            <li><a class="fs-400 text-gray" href="#">Express Service</a></li>
+                            <li><a class="fs-400 text-gray" href="#">About Us</a></li>
+                            <li><a class="fs-400 text-gray" href="#">Contact Us</a></li>
+                            <li><div class="profile flex">
+                                <img class="avator" src="./assets/icons/person-outline.svg" alt="Avator">
+                                <div class="acc-des">
+                                    <!-- <p class="fs-100 text-707070">Login Here</p> -->
+                                    <p class="fs-400 text-white"><a href="#">My Account</a></p>
+                                </div>
+                            </div>
+                            </li>
+                            <li>
+                                <div class="cart flex">
+                                    <img class="shop-icon" src="./assets/icons/shopping-cart-bold.svg" alt="shop-icon">
+                                    <div class="acc-des">
+                                        <p class="fs-400 text-white"><a href="#">Shopping Cart</a></p>
+                                        <!-- <p class="fs-400 medium text-black"><a href="#">6 Items</a></p> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="language flex">
+                                    <div class="flag"></div>
+                                    <p class="fs-400 text-gray">English</p>
+                                    <div class="dropdown-icon"></div>
+                                </div>
+                            </li>
+                        </ul>   
+                    </nav>
+                </div>
+            </div>
+        </section>
         
         <div class="container">
-            <h1 class="fs-900" style="margin-bottom: 3rem;">Design System</h1>
+            <h1 class="fs-900" style="margin-top:6rem; margin-bottom: 3rem; text-align: left;">Design System</h1>
             
             <!-- 01 Color -->
             <section id="colors">

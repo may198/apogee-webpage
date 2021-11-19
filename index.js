@@ -27,25 +27,21 @@ const carouselWidth = document.querySelector('.carousel-container').offsetWidth;
 
 next.addEventListener('click', () => {
     console.log("Click");
-    track.style.transform = `translateX(-${carouselWidth}rem)`;
+    track.style.transform = `translateX(-${carouselWidth}px)`;
 })
 
 prev.addEventListener('click', () => {
-    track.style.transform = `translateX(-${0}rem)`;
+    track.style.transform = `translateX(-${0}px)`;
 })
 
 
 // Sticky NavBar
 
 window.onscroll = function() {myFunction()};
-
-// Get the navbar
 var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
 var sticky = navbar.offsetTop;
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+
 function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
@@ -54,7 +50,7 @@ function myFunction() {
   }
 }
 
-// Start the hero section right after sticky navbar
+//Start the hero section right after sticky navbar
 const navHeight = document.getElementById('navbar').offsetHeight;
 const hero = document.querySelector('.hero');
 
