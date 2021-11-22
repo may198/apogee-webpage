@@ -49,9 +49,3 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
-
-// //Start the hero section right after sticky navbar
-// const navHeight = document.getElementById('navbar').offsetHeight;
-// const hero = document.querySelector('.hero');
-
-// hero.style.marginTop = `${navHeight}px`;
