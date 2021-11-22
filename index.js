@@ -50,8 +50,8 @@ function myFunction() {
   }
 }
 
-//Start the hero section right after sticky navbar
-const navHeight = document.getElementById('navbar').offsetHeight;
-const hero = document.querySelector('.hero');
+// //Start the hero section right after sticky navbar
+// const navHeight = document.getElementById('navbar').offsetHeight;
+// const hero = document.querySelector('.hero');
 
-hero.style.marginTop = `${navHeight}px`;
+// hero.style.marginTop = `${navHeight}px`;
